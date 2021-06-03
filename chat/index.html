@@ -3,27 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <title>Todo App</title>
+    <link rel="stylesheet" href="index.css">
   </head>
   <body>
     <!-- 2. class属性をCSSのために指定 -->
     <div class="todoapp">
       
       <!-- 3. id属性をJavaScriptのために指定 -->
-      <form id="message">
-          <input
-          id="message_input"
-          class="new-todo"
-          type="text"
-          placeholder="メッセージを入力してください"
-          autocomplete="off"
-          />
+      
+      <div id="message_list" >
+    </div>
+    
+    <div id="receive-message">
+    </div>
+    <form id="message">
+        <input
+        id="message_input"
+        class="new-todo"
+        type="text"
+        placeholder="メッセージを入力してください"
+        autocomplete="off"
+        />
 
-          <input type="button" id="button" value="送信する">
-          
-        </form>
+        <input type="button" id="button" value="送信する">
 
-        <div id="message_list" class="todo-list">
-        </div>
+      </form>
     </div>
     <script src="./index.js" type="module"></script>
   </body>
