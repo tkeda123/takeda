@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Todo App</title>
+  </head>
+  <body>
+    <!-- 2. class属性をCSSのために指定 -->
+    <div class="todoapp">
+      
+      <!-- 3. id属性をJavaScriptのために指定 -->
+      <form id="message">
+          <input
+          id="message_input"
+          class="new-todo"
+          type="text"
+          placeholder="メッセージを入力してください"
+          autocomplete="off"
+          />
+
+          <input type="button" id="button" value="送信する">
+          
+        </form>
+
+        <div id="message_list" class="todo-list">
+        </div>
+    </div>
+    <script src="./index.js" type="module"></script>
+  </body>
+</html>
+
