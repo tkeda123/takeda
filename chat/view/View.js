@@ -1,24 +1,36 @@
 
 // 描画するclass
+
 export const View =class {
-    constructor(){
-        let message_input=document.querySelector("#message_input").value;
-        let message_list=document.querySelector("#message_list");
-        const button =document.querySelector("#button");
+    constructor(socket){
+        // 入力された値
+        this.message_input=document.querySelector("#message_input").value;
+        // 入力された時の出力する場所
+        this.message_list=document.querySelector("#message_list");
+        // ボタン
+        this.button =document.querySelector("#button");
+        // 受け取る値
+        this.receive=document.querySelector("#receive-message");
         console.log(message_input);
+        // メッセージをフックするときの
+        socket.addEventListener("message",(e)=>{
+            return message_input;
+    })
     }
-     /**
-      *
-      *
-      */
-     displayMessage=()=>{
-        addEventListener('click',()=>{
+    
+
+    /**
+     *
+     *
+     */
+    displayMessage=()=>{
             const send_message=message_list.insertAdjacentHTML('afterbegin',`<ul>
-            <li>${message_input}</li>
-        </ul>`)})
-}};
+            <li>${message_input}</li>`
+            )}
 
-
-let send_message=new View("");
-
-send_message.displayMessage()
+    // 描画するときのメソッド
+        click_display=()=>{
+            addEventListener('click',this.displayMessage)
+        }
+            
+        };
