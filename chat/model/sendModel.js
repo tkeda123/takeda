@@ -3,7 +3,7 @@ export const sendModel=class{
     constructor(socket){
         this.socket = socket;
     }
-    click_button=()=>{
+    send_button=()=>{
         addEventListener('click',this.sendMessage)
     }
     sendMessage=()=>{

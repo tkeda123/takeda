@@ -1,5 +1,4 @@
 import {sendModel} from './../model/sendModel.js'
-import {receiveModel} from './../model/receiveModel.js'
 import {View} from './../view/View.js'
 const App  = class{
     constructor(){
@@ -9,9 +8,9 @@ const App  = class{
         this.view = new View(this.socket);
     }
     mount(){
-        this.send.click_button(this.socket);
+        this.send.send_button(this.socket);
         this.view.displayReceiveMessage(this.socket);
-        this.view.click_display()
+        this.view.click_display_message()
     }
 }
 

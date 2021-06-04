@@ -6,11 +6,11 @@ export const View =class {
         // 入力された値
         this.message_input=document.querySelector("#message_input");
         // 入力された時の出力する場所
-        this.message_list=document.querySelector("#message_list");
+        this.message_input_list=document.querySelector("#message_list");
         // ボタン
         this.button =document.querySelector("#button");
         // 受け取る値の場所
-        this.receive=document.querySelector("#receive-message");
+        this.receive_message_list=document.querySelector("#receive-message");
         console.log(message_input);
         // メッセージをフックするときの
         socket.addEventListener("message",(e)=>{
@@ -20,13 +20,13 @@ export const View =class {
    
 
     displayInputMessage=()=>{
-            this.send_message=message_list.insertAdjacentHTML('afterbegin',
+            this.send_message=message_input_list.insertAdjacentHTML('afterbegin',
             `<ul>
             <li>${message_input.value}</li>
             </ul>`
             )}
                 // 描画するときのメソッド
-        click_display=()=>{
+        click_display_message=()=>{
             button.addEventListener('click',this.displayInputMessage)
        }
 
@@ -38,7 +38,7 @@ export const View =class {
             socket.addEventListener("message",(e)=>{
                 console.log(e);
                 console.log(JSON.parse(e.data).body);
-                this.receiveMessage=this.receive.insertAdjacentHTML('afterbegin',
+                this.receiveMessage=this.receive_message_list.insertAdjacentHTML('afterbegin',
                 `<ul>
                 <li>${JSON.parse(e.data).body}</li>
                 </ul>`
