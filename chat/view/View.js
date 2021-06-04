@@ -36,9 +36,11 @@ export const View =class {
         displayReceiveMessage=(socket)=>{ 
             // フックしたものを描画させる
             socket.addEventListener("message",(e)=>{
+                console.log(e);
+                console.log(JSON.parse(e.data).body);
                 this.receiveMessage=this.receive.insertAdjacentHTML('afterbegin',
                 `<ul>
-                <li>JSON.parse(e.data)</li>
+                <li>${JSON.parse(e.data).body}</li>
                 </ul>`
                 )})}
                      
